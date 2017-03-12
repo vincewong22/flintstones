@@ -26,6 +26,10 @@ export class CharacterDetailComponent implements OnInit {
 goBack(): void {
   this.location.back();
 }
+save(): void {
+  this.cartoonService.update(this.character)
+    .then(() => this.goBack());
+}
 @Input()
 character: CartoonCharacter;
 }

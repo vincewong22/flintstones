@@ -7,6 +7,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 import { CartoonCharacterComponent } from './cartoon-character/cartoon-character.component';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,25 +19,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'characters',
-        component: CartoonCharacterComponent
-        
-      },
-      {
-       path: 'dashboard',
-      component: DashboardComponent
-    },
-    {
-  path: 'detail/:id',
-  component: CharacterDetailComponent
-  }
-      
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule { }
