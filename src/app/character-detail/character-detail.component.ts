@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'; 
+import { Component, OnInit,Input } from '@angular/core';
 import {CartoonCharacter} from '../cartoon-character'; 
 
 @Component({
@@ -11,7 +11,6 @@ export class CharacterDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 @Input()
 character: CartoonCharacter;

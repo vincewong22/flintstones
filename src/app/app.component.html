@@ -6,33 +6,16 @@
       <th>Last Name</th>
       <th>Occupation</th>
       <th>Gender</th>
-      <th>Picture</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of characters; let i=index;" (click)="onSelect(c)">
+    <tr *ngFor="let c of characters; let i=index;" (click)="onSelect(c)" [class.selected]="c === selected">
       <td>{{c.PersonId}}</td>
       <td>{{c.FirstName}}</td>
       <td>{{c.LastName}}</td>
       <td>{{c.Occupation}}</td>
       <td>{{c.Gender}}</td>
-      <td><img src="{{c.Picture}}" 
-        alt="{{c.FirstName}} {{c.LastName}}" /></td>
     </tr>
   </tbody>
 </table>
-<div *ngIf="selected">
-  <p>Person ID: {{selected.PersonId}}</p>
-  <p>First Name: {{selected.FirstName}}</p>
-  <p>Last Name: {{selected.LastName}}</p>
-  <p>Occupation: {{selected.Occupation}}</p>
-  <p>Gender: {{selected.Gender}}</p>
-  <p>Picture: <img src="{{selected.Picture}}" alt="{{selected.FirstName}} {{selected.LastName}}" /></p>
-  <div>
-    <p><label>First Name: </label><input [(ngModel)]="selected.FirstName" placeholder="FirstName"></p>
-    <p><label>Last Name: </label><input [(ngModel)]="selected.LastName" placeholder="LastName"></p>
-    <p><label>Occupation: </label><input [(ngModel)]="selected.Occupation" placeholder="Occupation"></p>
-    <p><label>Gender: </label><input [(ngModel)]="selected.Gender" placeholder="M or F"></p>
-    <p><label>Picture: </label><input [(ngModel)]="selected.Picture" placeholder="Picture"></p>
-  </div>
-</div>
+<app-character-detail [character]="selected"></app-character-detail>

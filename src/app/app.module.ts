@@ -11,6 +11,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
     AppComponent,
     CharacterDetailComponent,
     CharacterDetailComponent,
+    CharacterDetailComponent,
   ],
   imports: [
     BrowserModule,
