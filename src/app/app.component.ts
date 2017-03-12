@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CartoonCharacter} from './cartoon-character';
-import {DUMMY_DATA} from './data/dummy-data'; 
+import {CartoonCharacterService} from './cartoon-character.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CartoonCharacterService]
 })
-export class AppComponent {
-  characters = DUMMY_DATA; 
-  // character: CartoonCharacter = {
-  //   PersonId: 1,
-  //   FirstName: "Fred",
-  //   LastName: "Flintstone",
-  //   Occupation: "Mining Manager",
-  //   Gender: "M",
-  //   Picture:  "http://flintstones.zift.ca/images/flintstone/fred.png",
-  // };
+export class AppComponent implements OnInit {
   selected: CartoonCharacter;
+  characters: CartoonCharacter[];
+  constructor(private cartoonService: CartoonCharacterService) { }
   onSelect(character: CartoonCharacter): void {
-    this.selected= character;
+    this.selected = character;
+  }
+ getCartoonCharacters(): void {
+this.cartoonService.getCartoonCharacters()
+  .then(characters => this.characters = characters);
 }
+  ngOnInit(): void {
+    this.getCartoonCharacters();
+  }
 }
