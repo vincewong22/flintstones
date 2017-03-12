@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import { CartoonChracterComponent } from './cartoon-chracter/cartoon-chracter.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
     CharacterDetailComponent,
     CharacterDetailComponent,
     CharacterDetailComponent,
+    CartoonChracterComponent,
   ],
   imports: [
     BrowserModule,
