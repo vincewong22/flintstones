@@ -5,15 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { CartoonChracterComponent } from './cartoon-chracter/cartoon-chracter.component';
+import { CartoonCharacterComponent } from './cartoon-character/cartoon-character.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterDetailComponent,
-    CharacterDetailComponent,
-    CharacterDetailComponent,
-    CartoonChracterComponent,
+    CartoonCharacterComponent,
   ],
   imports: [
     BrowserModule,
