@@ -10,6 +10,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
   declarations: [
     AppComponent,
     CharacterDetailComponent,
+    CharacterDetailComponent,
   ],
   imports: [
     BrowserModule,
